@@ -20,7 +20,11 @@ function App() {
         headerShadowVisible: false,
         headerRight: () => (
           <Pressable>
-            <Notification size="32" color={ThemeColors.black} />
+            <Notification
+              size="33
+            "
+              color={ThemeColors.black}
+            />
           </Pressable>
         ),
       })}>

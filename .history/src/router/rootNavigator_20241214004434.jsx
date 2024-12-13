@@ -15,12 +15,12 @@ function App() {
     <Stack.Navigator
       screenOptions={({route, navigation}) => ({
         headerTitleStyle: {
-          fontSize: 22,
-        },
+          fontSize:12
+        }
         headerShadowVisible: false,
         headerRight: () => (
           <Pressable>
-            <Notification size="32" color={ThemeColors.black} />
+            <Notification size="34" color={ThemeColors.black} />
           </Pressable>
         ),
       })}>

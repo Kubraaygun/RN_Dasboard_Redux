@@ -5,8 +5,8 @@ import Dashboard from '../screens/dashboard';
 import Tasks from '../screens/tasks';
 import {DASHBOARD, TASKS} from '../utils/routes';
 import {Pressable, Text} from 'react-native';
-import {ThemeColors} from '../theme/colors';
 import {Notification} from 'iconsax-react-native';
+import {ThemeColors} from '../theme/colors';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,9 +14,6 @@ function App() {
   return (
     <Stack.Navigator
       screenOptions={({route, navigation}) => ({
-        headerTitleStyle: {
-          fontSize: 22,
-        },
         headerShadowVisible: false,
         headerRight: () => (
           <Pressable>
