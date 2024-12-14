@@ -1,5 +1,5 @@
 //import liraries
-import React, {useState} from 'react';
+import React from 'react';
 import {View, Text, StyleSheet, FlatList} from 'react-native';
 import {defaultScreenStyle} from '../../styles/defaultScreenStyle';
 import FloatAcionButton from '../../components/ui/floatActionButton';
