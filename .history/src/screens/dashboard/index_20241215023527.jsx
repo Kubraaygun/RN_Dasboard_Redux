@@ -19,8 +19,7 @@ const Dashboard = () => {
     const totalTask = tasks.length;
     const taskCount = tasks.filter(item => item?.status === status).length;
 
-    const percentage = (taskCount / 100).toFixed(2);
-    return percentage;
+    const percentage = (taskCount / totalTask) * 100;
   };
   return (
     <View style={defaultScreenStyle.container}>
@@ -42,7 +41,7 @@ const Dashboard = () => {
           ))}
         </View>
         <SectionTitle title={'Project Statistics'} />
-        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <View style={{justifyContent: 'center', alignItems: 'center'}}>
           <VictoryPie
             padAngle={1}
             width={380}

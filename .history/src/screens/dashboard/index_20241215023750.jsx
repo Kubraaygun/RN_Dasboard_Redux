@@ -18,8 +18,9 @@ const Dashboard = () => {
   const calculateTaskStats = status => {
     const totalTask = tasks.length;
     const taskCount = tasks.filter(item => item?.status === status).length;
+    if (totalTask === 0) return 0;
 
-    const percentage = (taskCount / 100).toFixed(2);
+    const percentage = ((totalTask / taskCount) * 100).toFixed(2);
     return percentage;
   };
   return (

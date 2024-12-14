@@ -19,8 +19,10 @@ const Dashboard = () => {
     const totalTask = tasks.length;
     const taskCount = tasks.filter(item => item?.status === status).length;
 
-    const percentage = (taskCount / 100).toFixed(2);
-    return percentage;
+    if (totalTask === 0) return 0; // Eğer hiç görev yo
+    const percentage = (taskCount / totalTask) * 100;
+
+    return percentage === 0 ? 1 : percentage;
   };
   return (
     <View style={defaultScreenStyle.container}>
