@@ -10,7 +10,7 @@ const AddTask = () => {
   return (
     <View style={defaultScreenStyle.container}>
       <Text>AddTask</Text>
-      <Input placeholder="Title" title="Task Title" />
+      <Input placeholder="Title" />
       <Button title="Kaydet" status="success" />
     </View>
   );

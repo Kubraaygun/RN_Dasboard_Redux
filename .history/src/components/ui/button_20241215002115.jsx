@@ -14,14 +14,11 @@ const Button = props => {
         return ThemeColors.yellow;
 
       default:
-        return ThemeColors.blue;
     }
   };
   return (
-    <TouchableOpacity
-      {...props}
-      style={[styles.container, {backgroundColor: setColor()}]}>
-      <Text style={styles.title}>{title}</Text>
+    <TouchableOpacity {...props} style={styles.container}>
+      <Text>{title}</Text>
     </TouchableOpacity>
   );
 };
@@ -31,13 +28,7 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 10,
-    paddingVertical: 15,
-    borderRadius: 8,
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: '500',
+    backgroundColor: '#2c3e50',
   },
 });
 

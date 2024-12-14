@@ -1,0 +1,27 @@
+//import liraries
+import React, {Component} from 'react';
+import {View, Text, StyleSheet, TextInput} from 'react-native';
+
+// create a component
+const Input = props => {
+  const {title} = props;
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>{title}</Text>
+      <TextInput {...props} />
+    </View>
+  );
+};
+
+// define your styles
+const styles = StyleSheet.create({
+  container: {
+    margin: 10,
+  },
+  title: {
+    fontSize: 18,
+  },
+});
+
+//make this component available to the app
+export default Input;

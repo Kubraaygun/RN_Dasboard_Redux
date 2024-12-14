@@ -21,7 +21,7 @@ const Button = props => {
     <TouchableOpacity
       {...props}
       style={[styles.container, {backgroundColor: setColor()}]}>
-      <Text style={styles.title}>{title}</Text>
+      <Text>{title}</Text>
     </TouchableOpacity>
   );
 };
@@ -34,10 +34,6 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingVertical: 15,
     borderRadius: 8,
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: '500',
   },
 });
 
