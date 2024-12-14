@@ -9,7 +9,6 @@ import TaskItem from '../../components/tasks/taskItem';
 // create a component
 const Tasks = () => {
   const {tasks} = useSelector(state => state?.tasks);
-  const [task, setTask] = useState([]);
   return (
     <View style={defaultScreenStyle.container}>
       <FlatList

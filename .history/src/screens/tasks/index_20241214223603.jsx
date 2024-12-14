@@ -1,5 +1,5 @@
 //import liraries
-import React, {useState} from 'react';
+import React, {Component, useState} from 'react';
 import {View, Text, StyleSheet, FlatList} from 'react-native';
 import {defaultScreenStyle} from '../../styles/defaultScreenStyle';
 import FloatAcionButton from '../../components/ui/floatActionButton';
@@ -9,7 +9,6 @@ import TaskItem from '../../components/tasks/taskItem';
 // create a component
 const Tasks = () => {
   const {tasks} = useSelector(state => state?.tasks);
-  const [task, setTask] = useState([]);
   return (
     <View style={defaultScreenStyle.container}>
       <FlatList
