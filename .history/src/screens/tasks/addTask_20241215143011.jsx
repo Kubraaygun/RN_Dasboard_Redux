@@ -11,9 +11,9 @@ import {statusTypes} from '../../utils/constant';
 // create a component
 const AddTask = () => {
   const [id, setId] = useState(0);
-  const [title, setTitle] = useState('');
-  const [date, setDate] = useState('');
-  const [status, setStatus] = useState('');
+  const [title, setTitle] = useState('New Task');
+  const [date, setDate] = useState('20 ekim');
+  const [status, setStatus] = useState(statusTypes.COMPLATED);
   const dispatch = useDispatch();
 
   const saveTask = () => {

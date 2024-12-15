@@ -63,11 +63,8 @@ const TaskItem = ({item}) => {
           <Trash size="25" color="red" variant="Outline" />
         </TouchableOpacity>
         <TouchableOpacity
-          onPressIn={() =>
-            navigation.navigate(UPDATETASK, {
-              task: item,
-            })
-          }>
+          onPressIn={() => navigation.navigate(UPDATETASK)}
+   
           <Edit size="25" color={ThemeColors.green} variant="Outline" />
         </TouchableOpacity>
       </View>

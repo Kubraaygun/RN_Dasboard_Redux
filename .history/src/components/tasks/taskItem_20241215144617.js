@@ -7,7 +7,6 @@ import {setColor} from '../../utils/function';
 import {useDispatch} from 'react-redux';
 import {deleteTask} from '../../store/actions/taskAction';
 import {useNavigation} from '@react-navigation/native';
-import {UPDATETASK} from '../../utils/routes';
 
 // create a component
 const TaskItem = ({item}) => {
@@ -62,12 +61,7 @@ const TaskItem = ({item}) => {
         <TouchableOpacity style={{marginHorizontal: 10}} onPress={deleteItem}>
           <Trash size="25" color="red" variant="Outline" />
         </TouchableOpacity>
-        <TouchableOpacity
-          onPressIn={() =>
-            navigation.navigate(UPDATETASK, {
-              task: item,
-            })
-          }>
+        <TouchableOpacity onPressIn={() => navigation} onPress={deleteItem}>
           <Edit size="25" color={ThemeColors.green} variant="Outline" />
         </TouchableOpacity>
       </View>

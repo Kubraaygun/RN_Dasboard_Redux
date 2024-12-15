@@ -8,7 +8,6 @@ import {Pressable, Text, View} from 'react-native';
 import {ThemeColors} from '../theme/colors';
 import {Notification, TaskSquare} from 'iconsax-react-native';
 import AddTask from '../screens/tasks/addTask';
-import UpdateTask from '../screens/tasks/updateTask';
 
 const Stack = createNativeStackNavigator();
 
@@ -43,7 +42,7 @@ function App() {
       />
       <Stack.Screen name={TASKS} component={Tasks} />
       <Stack.Screen name={ADDTASK} component={AddTask} />
-      <Stack.Screen name={UPDATETASK} component={UpdateTask} />
+      <Stack.Screen name={UPDATETASK} component={UPDATETASK} />
     </Stack.Navigator>
   );
 }

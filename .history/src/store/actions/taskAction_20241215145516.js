@@ -1,5 +1,6 @@
 import {Alert} from 'react-native';
-import {ADDTASK, DELETETASK, UPDATETASK} from '../types/tasksTypes';
+import {ADDTASK, DELETETASK} from '../types/tasksTypes';
+import {UPDATETASK} from '../../utils/routes';
 
 export const addNewTask = task => {
   return async dispatch => {
@@ -27,9 +28,6 @@ export const updateTask = task => {
       type: UPDATETASK,
       payload: task,
     });
-    Alert.alert(
-      'İşlem Başarılı',
-      'Güncelleme başarılı bir şekilde gerçekleşti.',
-    );
+    Alert.alert('İşlem Başarılı', 'Silme başarılı bir şekilde gerçekleşti.');
   };
 };

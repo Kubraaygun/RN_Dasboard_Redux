@@ -9,11 +9,12 @@ import {addNewTask} from '../../store/actions/taskAction';
 import {statusTypes} from '../../utils/constant';
 
 // create a component
-const AddTask = () => {
+const UpdateTask = ({route}) => {
+  const task = route.params.task;
   const [id, setId] = useState(0);
-  const [title, setTitle] = useState('');
-  const [date, setDate] = useState('');
-  const [status, setStatus] = useState('');
+  const [title, setTitle] = useState(task.title);
+  const [date, setDate] = useState(task.date);
+  const [status, setStatus] = useState(task.status);
   const dispatch = useDispatch();
 
   const saveTask = () => {
@@ -46,9 +47,9 @@ const AddTask = () => {
         placeholder="Please set status"
         title="Task Status"
       />
-      <Button onPress={() => saveTask()} title="Kaydet" status="success" />
+      <Button onPress={() => saveTask()} title="Güncelle" status="warning" />
     </View>
   );
 };
 
-export default AddTask;
+export default UpdateTask;

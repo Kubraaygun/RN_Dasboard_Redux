@@ -9,7 +9,8 @@ import {addNewTask} from '../../store/actions/taskAction';
 import {statusTypes} from '../../utils/constant';
 
 // create a component
-const AddTask = () => {
+const UpdateTask = ({route}) => {
+  const task = route.params.task;
   const [id, setId] = useState(0);
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
@@ -51,4 +52,4 @@ const AddTask = () => {
   );
 };
 
-export default AddTask;
+export default UpdateTask;

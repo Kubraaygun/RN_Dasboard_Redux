@@ -42,9 +42,7 @@ const tasksReducer = (state = initialState, action) => {
     case UPDATETASK:
       return {
         ...state,
-        tasks: state?.tasks?.map(task =>
-          task.id === action.payload.id ? action.payload : task,
-        ),
+        tasks: state?.tasks?.filter(task => task.id != action.payload),
       };
     default:
       return state;

@@ -6,12 +6,9 @@ import {Calendar1, Edit, More, Trash} from 'iconsax-react-native';
 import {setColor} from '../../utils/function';
 import {useDispatch} from 'react-redux';
 import {deleteTask} from '../../store/actions/taskAction';
-import {useNavigation} from '@react-navigation/native';
-import {UPDATETASK} from '../../utils/routes';
 
 // create a component
 const TaskItem = ({item}) => {
-  const navigation = useNavigation();
   const dispatch = useDispatch();
   const deleteItem = () => {
     Alert.alert(
@@ -59,16 +56,11 @@ const TaskItem = ({item}) => {
         </View>
       </View>
       <View style={{flexDirection: 'row'}}>
-        <TouchableOpacity style={{marginHorizontal: 10}} onPress={deleteItem}>
+        <TouchableOpacity onPress={deleteItem}>
           <Trash size="25" color="red" variant="Outline" />
         </TouchableOpacity>
-        <TouchableOpacity
-          onPressIn={() =>
-            navigation.navigate(UPDATETASK, {
-              task: item,
-            })
-          }>
-          <Edit size="25" color={ThemeColors.green} variant="Outline" />
+        <TouchableOpacity onPress={deleteItem}>
+          <Edit size="25" color="red" variant="Outline" />
         </TouchableOpacity>
       </View>
     </View>
