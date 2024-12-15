@@ -12,16 +12,16 @@ const TaskItem = ({item}) => {
   const dispatch = useDispatch();
   const deleteItem = () => {
     Alert.alert(
-      'Uyarı',
-      'Kayıt Silinecek Emin misiniz ?',
+      'Uyari',
+      'Kayit Silinecek Emin misiniz ?',
 
       [
         {
-          text: 'Sil?',
+          text: 'Emin misiniz?',
           onPress: () => dispatch(deleteTask(item.id)),
         },
         {
-          text: 'Vazgeç',
+          text: 'Vazgec?',
           onPress: () => console.log('Cancel'),
           style: 'cancel',
         },
@@ -53,7 +53,7 @@ const TaskItem = ({item}) => {
           <Text style={styles.date}>{item.date}</Text>
         </View>
       </View>
-      <TouchableOpacity onPress={deleteItem}>
+      <TouchableOpacity onPress={deleteTask}>
         <More size="25" color={ThemeColors.black} variant="Outline" />
       </TouchableOpacity>
     </View>

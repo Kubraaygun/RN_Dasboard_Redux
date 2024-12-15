@@ -11,22 +11,7 @@ import {deleteTask} from '../../store/actions/taskAction';
 const TaskItem = ({item}) => {
   const dispatch = useDispatch();
   const deleteItem = () => {
-    Alert.alert(
-      'Uyarı',
-      'Kayıt Silinecek Emin misiniz ?',
-
-      [
-        {
-          text: 'Sil?',
-          onPress: () => dispatch(deleteTask(item.id)),
-        },
-        {
-          text: 'Vazgeç',
-          onPress: () => console.log('Cancel'),
-          style: 'cancel',
-        },
-      ],
-    );
+    Alert.alert('Uyari', 'Kayit Silinecek Emin misiniz ?');
   };
   return (
     <View style={styles.container}>
@@ -53,7 +38,7 @@ const TaskItem = ({item}) => {
           <Text style={styles.date}>{item.date}</Text>
         </View>
       </View>
-      <TouchableOpacity onPress={deleteItem}>
+      <TouchableOpacity onPress={deleteTask}>
         <More size="25" color={ThemeColors.black} variant="Outline" />
       </TouchableOpacity>
     </View>

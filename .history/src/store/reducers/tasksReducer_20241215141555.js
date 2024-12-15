@@ -1,8 +1,9 @@
 import {ThemeColors} from '../../theme/colors';
-import {ADDTASK, DELETETASK} from '../types/tasksTypes';
+import {ADDTASK} from '../types/tasksTypes';
 
 const initialState = {
   tasks: [],
+  testMessage: 'test messagesfjdskjfksjfkd',
   taskStatus: [
     {
       id: 1,
@@ -34,13 +35,14 @@ const tasksReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADDTASK:
       return {...state, tasks: [...state.tasks, action.payload]};
-    case DELETETASK:
-      return {
-        ...state,
-        tasks: state?.tasks?.filter(task => task.id != action.payload),
-      };
+
     default:
-      return state;
+   
+      case ADDTASK:
+        return {...state, tasks: [...state.tasks, action.payload]};
+  
+      default:
+        return state;
   }
 };
 export default tasksReducer;

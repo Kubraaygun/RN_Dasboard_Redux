@@ -1,6 +1,6 @@
 //import liraries
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, Alert} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {ThemeColors} from '../../theme/colors';
 import {Calendar1, More} from 'iconsax-react-native';
 import {setColor} from '../../utils/function';
@@ -10,24 +10,6 @@ import {deleteTask} from '../../store/actions/taskAction';
 // create a component
 const TaskItem = ({item}) => {
   const dispatch = useDispatch();
-  const deleteItem = () => {
-    Alert.alert(
-      'Uyarı',
-      'Kayıt Silinecek Emin misiniz ?',
-
-      [
-        {
-          text: 'Sil?',
-          onPress: () => dispatch(deleteTask(item.id)),
-        },
-        {
-          text: 'Vazgeç',
-          onPress: () => console.log('Cancel'),
-          style: 'cancel',
-        },
-      ],
-    );
-  };
   return (
     <View style={styles.container}>
       <View style={{justifyContent: 'space-around'}}>
@@ -53,7 +35,7 @@ const TaskItem = ({item}) => {
           <Text style={styles.date}>{item.date}</Text>
         </View>
       </View>
-      <TouchableOpacity onPress={deleteItem}>
+      <TouchableOpacity onPress={deleteTask}>
         <More size="25" color={ThemeColors.black} variant="Outline" />
       </TouchableOpacity>
     </View>

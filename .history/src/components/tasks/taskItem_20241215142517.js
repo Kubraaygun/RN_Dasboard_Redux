@@ -12,8 +12,8 @@ const TaskItem = ({item}) => {
   const dispatch = useDispatch();
   const deleteItem = () => {
     Alert.alert(
-      'Uyarı',
-      'Kayıt Silinecek Emin misiniz ?',
+      'Uyari',
+      'Kayit Silinecek Emin misiniz ?',
 
       [
         {
@@ -21,7 +21,7 @@ const TaskItem = ({item}) => {
           onPress: () => dispatch(deleteTask(item.id)),
         },
         {
-          text: 'Vazgeç',
+          text: 'Vazgec?',
           onPress: () => console.log('Cancel'),
           style: 'cancel',
         },
