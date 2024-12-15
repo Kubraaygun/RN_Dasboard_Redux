@@ -13,7 +13,7 @@ const AddTask = () => {
   const [id, setId] = useState(0);
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
-  const [status, setStatus] = useState();
+  const [status, setStatus] = useState('');
   const dispatch = useDispatch();
 
   const saveTask = () => {
@@ -40,12 +40,13 @@ const AddTask = () => {
         placeholder="Please set date"
         title="Task Date"
       />
-      <Input
-        onChangeText={value => setStatus(value)}
-        value={status}
-        placeholder="Please set status"
-        title="Task Status"
-      />
+      <RadioGroup
+        selectedIndex={values.category}
+        onChange={index => setFieldValue('category', index)}>
+        <Radio status="success">Software</Radio>
+        <Radio status="success">Design</Radio>
+        <Radio status="success">Operations</Radio>
+      </RadioGroup>
       <Button onPress={() => saveTask()} title="Kaydet" status="success" />
     </View>
   );

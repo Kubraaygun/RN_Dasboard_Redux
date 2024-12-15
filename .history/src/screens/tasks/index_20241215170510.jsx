@@ -17,7 +17,8 @@ const Tasks = ({navigation}) => {
         ListEmptyComponent={
           <Text
             style={{
-              textAlign: 'center',
+              justifyContent: 'center',
+              alignItems: 'center',
               fontSize: 18,
             }}>
             Henüz bir task oluşturulmadı.

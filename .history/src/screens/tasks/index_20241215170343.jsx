@@ -15,11 +15,7 @@ const Tasks = ({navigation}) => {
     <View style={defaultScreenStyle.container}>
       <FlatList
         ListEmptyComponent={
-          <Text
-            style={{
-              textAlign: 'center',
-              fontSize: 18,
-            }}>
+          <Text style={{textAlign: 'center', fontSize: 18}}>
             Henüz bir task oluşturulmadı.
           </Text>
         }

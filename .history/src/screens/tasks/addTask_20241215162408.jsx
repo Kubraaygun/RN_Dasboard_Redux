@@ -11,9 +11,9 @@ import {statusTypes} from '../../utils/constant';
 // create a component
 const AddTask = () => {
   const [id, setId] = useState(0);
-  const [title, setTitle] = useState('');
-  const [date, setDate] = useState('');
-  const [status, setStatus] = useState();
+  const [title, setTitle] = useState();
+  const [date, setDate] = useState();
+  const [status, setStatus] = useState('');
   const dispatch = useDispatch();
 
   const saveTask = () => {
@@ -23,7 +23,7 @@ const AddTask = () => {
       status: status,
       date: date,
     };
-
+    setId(id + 1);
     dispatch(addNewTask(task));
   };
   return (

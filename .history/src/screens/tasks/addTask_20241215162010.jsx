@@ -6,14 +6,14 @@ import Button from '../../components/ui/button';
 import Input from '../../components/ui/input';
 import {useDispatch} from 'react-redux';
 import {addNewTask} from '../../store/actions/taskAction';
-import {statusTypes} from '../../utils/constant';
+
 
 // create a component
 const AddTask = () => {
   const [id, setId] = useState(0);
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
-  const [status, setStatus] = useState();
+  const [status, setStatus] = useState('');
   const dispatch = useDispatch();
 
   const saveTask = () => {
@@ -23,7 +23,7 @@ const AddTask = () => {
       status: status,
       date: date,
     };
-
+    setId(id + 1);
     dispatch(addNewTask(task));
   };
   return (
@@ -40,9 +40,9 @@ const AddTask = () => {
         placeholder="Please set date"
         title="Task Date"
       />
-      <Input
+      <
         onChangeText={value => setStatus(value)}
-        value={status}
+        items={statusOptions}
         placeholder="Please set status"
         title="Task Status"
       />

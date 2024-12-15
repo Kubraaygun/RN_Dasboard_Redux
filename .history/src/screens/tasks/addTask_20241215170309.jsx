@@ -13,7 +13,7 @@ const AddTask = () => {
   const [id, setId] = useState(0);
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
-  const [status, setStatus] = useState();
+  const [status, setStatus] = useState('');
   const dispatch = useDispatch();
 
   const saveTask = () => {

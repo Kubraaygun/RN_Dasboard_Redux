@@ -13,7 +13,7 @@ const AddTask = () => {
   const [id, setId] = useState(0);
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
-  const [status, setStatus] = useState();
+  const [status, setStatus] = useState('');
   const dispatch = useDispatch();
 
   const saveTask = () => {
@@ -34,7 +34,7 @@ const AddTask = () => {
         placeholder="Please set title"
         title="Task Title"
       />
-      <Input
+      <CustomDatePicker
         onChangeText={value => setDate(value)}
         value={date}
         placeholder="Please set date"

@@ -7,13 +7,15 @@ import Input from '../../components/ui/input';
 import {useDispatch} from 'react-redux';
 import {addNewTask} from '../../store/actions/taskAction';
 import {statusTypes} from '../../utils/constant';
+import {RadioGroup} from '@ui-kitten/components';
+import {Radio} from 'iconsax-react-native';
 
 // create a component
 const AddTask = () => {
   const [id, setId] = useState(0);
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
-  const [status, setStatus] = useState();
+  const [status, setStatus] = useState('');
   const dispatch = useDispatch();
 
   const saveTask = () => {
@@ -40,12 +42,11 @@ const AddTask = () => {
         placeholder="Please set date"
         title="Task Date"
       />
-      <Input
-        onChangeText={value => setStatus(value)}
-        value={status}
-        placeholder="Please set status"
-        title="Task Status"
-      />
+      <RadioGroup onChange={index => setFieldValue('category', index)}>
+        <Radio status="success">Software</Radio>
+        <Radio status="success">Design</Radio>
+        <Radio status="success">Operations</Radio>
+      </RadioGroup>
       <Button onPress={() => saveTask()} title="Kaydet" status="success" />
     </View>
   );

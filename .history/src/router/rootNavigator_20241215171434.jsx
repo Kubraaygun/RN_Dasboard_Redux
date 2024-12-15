@@ -6,6 +6,7 @@ import Tasks from '../screens/tasks';
 import {ADDTASK, DASHBOARD, TASKS, UPDATETASK} from '../utils/routes';
 import {Pressable, View} from 'react-native';
 import {ThemeColors} from '../theme/colors';
+
 import {Notification, TaskSquare} from 'iconsax-react-native';
 import AddTask from '../screens/tasks/addTask';
 import UpdateTask from '../screens/tasks/updateTask';

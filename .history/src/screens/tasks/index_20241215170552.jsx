@@ -18,7 +18,12 @@ const Tasks = ({navigation}) => {
           <Text
             style={{
               textAlign: 'center',
+              justifyContent: 'center',
+              alignItems: 'center',
               fontSize: 18,
+              flex: 1,
+              justifyContent: 'center',
+              alignSelf: 'center',
             }}>
             Henüz bir task oluşturulmadı.
           </Text>

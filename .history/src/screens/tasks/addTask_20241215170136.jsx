@@ -7,13 +7,14 @@ import Input from '../../components/ui/input';
 import {useDispatch} from 'react-redux';
 import {addNewTask} from '../../store/actions/taskAction';
 import {statusTypes} from '../../utils/constant';
+import CustomDatePicker from '../../components/ui/customDatePicker';
 
 // create a component
 const AddTask = () => {
   const [id, setId] = useState(0);
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
-  const [status, setStatus] = useState();
+  const [status, setStatus] = useState('');
   const dispatch = useDispatch();
 
   const saveTask = () => {
@@ -34,11 +35,14 @@ const AddTask = () => {
         placeholder="Please set title"
         title="Task Title"
       />
-      <Input
-        onChangeText={value => setDate(value)}
-        value={date}
-        placeholder="Please set date"
-        title="Task Date"
+      <CustomDatePicker
+        size="large"
+        style={{marginVertical: 10}}
+        date={values.date}
+        label={'End Date'}
+        onSelectDate={date => setFieldValue('endDate', date)}
+        status={errors.endDate ? 'danger' : 'basic'}
+        caption={errors.endDate}
       />
       <Input
         onChangeText={value => setStatus(value)}
